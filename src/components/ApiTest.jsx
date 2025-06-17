@@ -2,13 +2,13 @@ import { useState, useEffect } from "react"
 
 export default function ApiTest(props) {
     const [starWarsData, setstarWarsData] = useState(null)
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     
-    console.log("ApiTest component rendered")
+    // console.log("ApiTest component rendered")
 
     useEffect(() => {
-        console.log("useEffect called")
-        fetch("https://swapi.tech/api/people/1/")
+        // console.log("useEffect called")
+        fetch(`https://swapi.tech/api/people/${count}`)
         .then(res => res.json())
         .then(data => setstarWarsData(data))
     }, [count]) 
